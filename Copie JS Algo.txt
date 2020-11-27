@@ -1,0 +1,46 @@
+/* objectif: Demander à l'utilisateur d'indiquer une série de nombres entiers
+et de terminer par un 0 pour clore cette liste.
+Indiquer
+1 combien de nombres ont été renseignés
+2 Le plus petit et le plus grand nombre de cette liste
+3 la somme de ces nombres
+4 La moyenne de ces nombres
+*/
+
+//VARIABLES
+let N = 0, rang = 0, somme = 0, moyenne = 0, minimum = 0, maximum = 0, listeN = [];
+//DEBUT ALGO
+//Valeur de base N
+N = 1; 
+//Valeur de base rang
+rang = 0;
+//Condition pour terminer la liste
+while (N != 0) {
+    N = prompt("Veuillez saisir un nombre - Entrez 0 pour terminer la liste");
+	listeN[rang] = N;
+	rang = rang+1;
+}
+// ne pas compter le O qui termine la liste
+rang = rang-1;
+//Afficher combien de nombres comporte la liste
+document.write(rang);
+document.write(" nombres saisis");
+//Retirer le 0 de la liste
+listeN.pop();
+//Afficher le Min et le Max
+minimum = Math.min(...listeN);
+maximum = Math.max(...listeN);
+document.write("compris entre ");
+document.write(minimum);
+document.write(" et ");
+document.write(maximum);
+//Afficher la somme (Boucle)
+for (let i=0;i<listeN.length;i++)
+    {somme += listeN[i]++;}
+document.write("Pour une somme de ");
+document.write(somme);
+// Afficher la Moyenne
+moyenne = somme/rang
+document.write("Et une moyenne de ");
+document.write(moyenne);
+//FIN ALGO
